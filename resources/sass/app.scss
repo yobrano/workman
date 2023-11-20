@@ -1,0 +1,18 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+/* === Core Styles === */
+@import "reset";
+@import "navbar";
+@import "main";
+
+/* === Components === */
+@import "components/buttons";
+
+body {
+    background-color: red;
+}

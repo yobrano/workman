@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* Google Social Login */
+Route::get('/login/google', [App\Http\Controllers\GoogleLoginController::class,'redirect'])->name('login.google-redirect');
+Route::get('/login/google/callback',  [App\Http\Controllers\GoogleLoginController::class,'callback'])->name('login.google-callback');
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
