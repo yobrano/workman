@@ -75,12 +75,11 @@
     </div>
 </div> --}}
 
-    <div id="body" class="theme-green">
 
         <div class="auth-main">
             <div class="auth_div vivify fadeIn">
                 <div class="auth_brand">
-                    <a class="navbar-brand" href="#"><img src="{{ asset('/assets/images/frontend/logo-min.svg') }}"
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('/assets/images/frontend/logo-min.svg') }}"
                             width="50" class="d-inline-block align-top mr-2"
                             alt="">{{ config('app.name', 'Laravel') }}</a>
                 </div>
@@ -89,8 +88,8 @@
                         <p class="lead">Create an account</p>
                     </div>
                     <div class="body">
-                        <div class="row">
-                            <div class="col-md-9">
+                        {{-- <div class="row">
+                            <div class="col-md-9"> --}}
                                 <form class="form-auth-small" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group c_form_group">
@@ -143,12 +142,12 @@
                                                 {{ __('Login') }}</a></span>
                                     </div>
                                 </form>
-                            </div>
+                            {{-- </div>
                             <div class="col-md-3"> <button class="btn btn-signin-social"><i
                                         class="fa fa-google google-color"></i>
                                     <a href="{{ url('login/google') }}"> Sign in</a>
                                 </button></div>
-                        </div>
+                        </div> --}}
 
                         {{-- <div class="separator-linethrough"><span>OR</span></div> --}}
 
@@ -165,5 +164,5 @@
             </div>
         </div>
         <!-- END WRAPPER -->
-    </div>
+  
 @endsection

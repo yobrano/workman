@@ -78,13 +78,12 @@
         </div>
     </div>
 </div> --}}
-    <div id="body" class="theme-green">
-
+ 
 
         <div class="auth-main">
             <div class="auth_div vivify fadeIn">
                 <div class="auth_brand">
-                    <a class="navbar-brand" href="#"><img src="{{ asset('/assets/images/frontend/logo-min.svg') }}"
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('/assets/images/frontend/logo-min.svg') }}"
                             width="50" class="d-inline-block align-top mr-2"
                             alt="login-logo">{{ config('app.name', 'Laravel') }}</a>
                 </div>
@@ -169,5 +168,5 @@
         </div> --}}
         </div>
 
-    </div>
+ 
 @endsection

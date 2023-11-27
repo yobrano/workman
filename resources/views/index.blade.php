@@ -15,11 +15,11 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/vendors/owl.carousel/css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('/vendors/owl.carousel/css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/vendors/jquery-flipster/css/jquery.flipster.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -62,20 +62,31 @@
                         @endif --}}
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                                </a>
-
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+        {{ __('Dashboard') }}
+        </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
+                                {{-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    Dropdown link
+                                  </a>
+                                
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div> --}}
                             </li>
                     @endguest
                 </ul>
@@ -549,13 +560,13 @@
 
 
     {{-- Scripts --}}
-    <script src="{{ asset('/js/app.js') }}"></script>
     <script src="{{ asset('/vendors/base/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('/vendors/owl.carousel/js/owl.carousel.js') }}"></script>
     <script src="{{ asset('/vendors/jquery-flipster/js/jquery.flipster.min.js') }}"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
+    {{-- <script src="{{ asset('/js/app.js') }}"></script> --}}
 
-    @yield('script')
+    {{-- @yield('script') --}}
 </body>
 
 </html>

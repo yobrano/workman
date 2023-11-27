@@ -9492,7 +9492,8 @@ html {
 .our-services h3 {
   color: #e0e0e0;
 }
-.our-services h5, .our-services h6 {
+.our-services h5,
+.our-services h6 {
   color: #adadad;
 }
 .our-services p {
@@ -9656,8 +9657,4 @@ section {
 .btn-outline-primary {
   border-color: #17C2D7;
   color: #17C2D7;
-}
-
-body {
-  background-color: red;
 }

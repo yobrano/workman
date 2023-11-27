@@ -4235,8 +4235,8 @@ select.form-control:not([size]):not([multiple]) {
 
 .auth-main .auth_div {
     background-color: var(--card-color);
-    width: 600px;
-    /* width: 360px; */
+    /* width: 600px; */
+    width: 360px;
     z-index: 2
 }
 
