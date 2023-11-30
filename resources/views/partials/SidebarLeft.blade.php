@@ -6,6 +6,7 @@
     $flg = $arr[count($arr)-1];
     $projectsState = false;
     $servicesState = false;
+    $presetState = false;
     if($flg=="project" || $flg=="projects"){
         $projectsState = true;
     }
@@ -13,7 +14,11 @@
         $servicesState = true;
     }
 
-    echo $projectsState;
+    if($flg=="preset" || $flg=="presets"){
+        $presetState = true;
+    }
+
+    // echo $projectsState;
  ?>
   <!-- Main left sidebar menu -->
   <div id="left-sidebar" class="sidebar light_active">
@@ -25,14 +30,14 @@
     <div class="sidebar-scroll">
         <div class="user-account">
             <div class="user_div">
-                <img src="assets/images/user.png" class="user-photo" alt="User Profile Picture">
+                <img src="{{ asset('assets/images/user2.jpeg') }}" class="user-photo" alt="User Profile Picture">
             </div>
             <div class="dropdown">
                 <span>{{__('Welcome')}}</span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     <li><a href="dr-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
-                    <li><a href="app-inbox.html"><i class="fa fa-envelope"></i>Messages</a></li>
+                    {{-- <li><a href="app-inbox.html"><i class="fa fa-envelope"></i>Messages</a></li> --}}
                     <li><a href="setting.html"><i class="fa fa-gear"></i>Settings</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
@@ -69,11 +74,11 @@
                 <li class="{{$servicesState?"active":""}}">
                     <a href="#Services" class="has-arrow"><i class="fa fa-thumbs-up"></i><span>Services</span></a>
                     <ul>
-                        <li><a href="#">All Services</a></li>
+                        <li class="{{$name=='admin.service'?"active":""}}"><a href="{{route('admin.service')}}">All Services</a></li>
                         <li class="{{$name=='admin.groups.service'?"active":""}}"><a href="{{route('admin.groups.service')}}">Service Groups</a></li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="#Patients" class="has-arrow"><i class="fa fa-user-circle-o"></i><span>Patients</span></a>
                     <ul>
                         <li><a href="patients-all.html">All Patient</a></li>
@@ -81,25 +86,32 @@
                         <li><a href="patients-profile.html">Patient Profile</a></li>
                         <li><a href="patients-invoice.html">Patient Invoices</a></li>
                     </ul>
-                </li>
-                <li><a href="departments.html"><i class="fa fa-table"></i><span>Departments</span></a></li>
-                <li>
+                </li> --}}
+                {{-- <li><a href="departments.html"><i class="fa fa-table"></i><span>Departments</span></a></li> --}}
+                {{-- <li>
                     <a href="#Payments" class="has-arrow"><i class="fa fa-cc-paypal"></i><span>Payments</span></a>
                     <ul>
                         <li><a href="payments.html">Payments</a></li>
                         <li><a href="payments-add.html">Add Payments</a></li>
                         <li><a href="payments-invoice.html">Invoice</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="header">Admin</li>
-                <li><a href="app-inbox.html"><i class="fa fa-envelope"></i> <span>Email</span> <span class="badge badge-default mr-0">12</span></a></li>
-                <li><a href="app-chat.html"><i class="fa fa-comments"></i> <span>Chat</span></a></li>
-                <li><a href="our-staffs.html"><i class="fa fa-users"></i><span>Our Staffs</span></a></li>
-                <li><a href="app-contacts.html"><i class="fa fa-address-book"></i> <span>Contacts</span></a></li>
-                <li><a href="app-filemanager.html"><i class="fa fa-folder"></i> <span>File Manager</span></a></li>
-                <li><a href="our-centres.html"><i class="fa fa-map-marker"></i><span>Our Centres</span></a></li>
+                {{-- <li><a href="app-inbox.html"><i class="fa fa-envelope"></i> <span>Email</span> <span class="badge badge-default mr-0">12</span></a></li> --}}
+                {{-- <li><a href="app-chat.html"><i class="fa fa-comments"></i> <span>Chat</span></a></li> --}}
+                <li><a href="#"><i class="fa fa-users"></i><span>Our Staffs</span></a></li>
+                <li><a href="#"><i class="fa fa-address-book"></i> <span>Contacts</span></a></li>
+                <li class="{{$presetState?"active":""}}">
+                    <a href="#Pre-sets" class="has-arrow"><i class="fa fa-folder"></i><span>Pre sets</span></a>
+                    <ul>
+                        <li class="{{$name=='admin.locations.preset'?"active":""}}"><a href="{{route('admin.locations.preset')}}">Locations</a></li>
+                        {{-- <li class="{{$name=='admin.groups.service'?"active":""}}"><a href="{{route('admin.groups.service')}}">Service Groups</a></li> --}}
+                    </ul>
+                </li>
+                {{-- <li><a href="app-filemanager.html"><i class="fa fa-folder"></i> <span>File Manager</span></a></li> --}}
+                {{-- <li><a href="our-centres.html"><i class="fa fa-map-marker"></i><span>Our Centres</span></a></li> --}}
                 <li class="header">Social</li>
-                <li><a href="page-news.html"><i class="fa fa-globe"></i> <span>Blog</span></a></li>
+                {{-- <li><a href="page-news.html"><i class="fa fa-globe"></i> <span>Blog</span></a></li> --}}
                 <li><a href="page-social.html"><i class="fa fa-share-alt-square"></i> <span>Social</span></a></li>                        
                 <li class="extra_widget">
                     <div class="form-group">

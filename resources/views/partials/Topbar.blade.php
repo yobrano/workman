@@ -14,16 +14,16 @@
         <div class="navbar-right">
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="javascript:void(0);" class="right_note icon-menu" title="Right Menu">Notes</a></li>
+                    {{-- <li><a href="javascript:void(0);" class="right_note icon-menu" title="Right Menu">Notes</a></li> --}}
                     <li class="dropdown hidden-xs">
                         <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">Create</a>
                         <div class="dropdown-menu pb-0 mt-0">
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">User</a>
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Invoce</a>
+                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Professional</a>
+                            {{-- <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Invoce</a> --}}
                             <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Report</a>
                         </div>
                     </li>
-                    <li class="dropdown hidden-xs">
+                    {{-- <li class="dropdown hidden-xs">
                         <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
                             <span class="notification-dot msg">4</span>
@@ -131,14 +131,15 @@
                             <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);"><img src="assets/images/flag/arabia.svg" alt="Arabic" > Arabic</a>
                             <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);"><img src="assets/images/flag/france.svg" alt="French" > French</a>
                         </div>
-                    </li>
-                    <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-comments-o"></i></a></li>
+                    </li> --}}
+                    {{-- <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-comments-o"></i></a></li> --}}
                     <li class="hidden-xs"><a href="javascript:void(0);" id="btnFullscreen" class="icon-menu"><i class="fa fa-arrows-alt"></i></a></li>
-                    <li><a href="page-login.html" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                 </ul>
             </div>
         </div>
-        <div class="recent_searche" style="display: none;">
+        {{-- <div class="recent_searche" style="display: none;">
             <div class="card mb-0">
                 <div class="header">
                     <h2>Recent search result</h2>
@@ -182,6 +183,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </nav>

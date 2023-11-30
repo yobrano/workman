@@ -28,16 +28,16 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 text-lg-right">
                         <div class="d-flex align-items-center justify-content-lg-end mt-4 mt-lg-0 flex-wrap vivify pullUp delay-550">
                             <div class="border-right pr-4 mr-4 mb-2 mb-xl-0 hidden-xs">
-                                <p class="text-muted mb-1">Operation <span id="mini-bar-chart3" class="mini-bar-chart"></span></p>
+                                <p class="text-muted mb-1">Professional<span id="mini-bar-chart3" class="mini-bar-chart"></span></p>
                                 <h5 class="mb-0">29</h5>
                             </div>
                             <div class="border-right pr-4 mr-4 mb-2 mb-xl-0">
-                                <p class="text-muted mb-1">Earning <span id="mini-bar-chart2" class="mini-bar-chart"></span></p>
-                                <h5 class="mb-0">$981</h5>
+                                <p class="text-muted mb-1">Service Group <span id="mini-bar-chart2" class="mini-bar-chart"></span></p>
+                                <h5 class="mb-0">981</h5>
                             </div>
                             <div class="mb-3 mb-xl-0">
-                                <p class="text-muted mb-1">Revenue <span id="mini-bar-chart1" class="mini-bar-chart"></span></p>
-                                <h5 class="mb-0">$56 M</h5>
+                                <p class="text-muted mb-1">Categories <span id="mini-bar-chart1" class="mini-bar-chart"></span></p>
+                                <h5 class="mb-0">56</h5>
                             </div>
                         </div>
                     </div>
@@ -53,13 +53,13 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active"><a class="nav-link" href="index.html">Analytics</a></li>
-                                <li class="nav-item"><a class="nav-link" href="covid-19.html">Covid 19 Dashboard</a></li>
+                                {{-- <li class="nav-item"><a class="nav-link" href="covid-19.html">Covid 19 Dashboard</a></li> --}}
                             </ul>
-                            <div class="ml-auto">
+                            {{-- <div class="ml-auto">
                                 <a href="app-todo.html" class="btn btn-default">ToDo</a>
                                 <a href="setting.html" class="btn btn-default">Settings</a>
                                 <a href="https://themeforest.net/user/puffintheme/portfolio" target="_blank" class="btn btn-secondary">Buy this item</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </nav>
                 </div>
@@ -73,8 +73,8 @@
                                             <div>Total Doctors</div>
                                             <div class="mt-3 h1">1,035</div>
                                             <div class="d-flex">
-                                                <div class="mr-3">1.78% <i class="fa fa-caret-down"></i></div>
-                                                <span>Last year</span>
+                                                <div class="mr-3">1.78% <i class="fa fa-caret-up"></i></div>
+                                                <span>Current Year</span>
                                             </div>
                                         </div>
                                     </div>
@@ -85,8 +85,8 @@
                                             <div>Total Pharmacists</div>
                                             <div class="mt-3 h1">735</div>
                                             <div class="d-flex">
-                                                <div class="mr-3">6.78% <i class="fa fa-caret-down"></i></div>
-                                                <span>Last year</span>
+                                                <div class="mr-3">6.78% <i class="fa fa-caret-up"></i></div>
+                                                <span>Current Year</span>
                                             </div>
                                         </div>
                                     </div>
@@ -97,8 +97,8 @@
                                             <div>Total Nurses</div>
                                             <div class="mt-3 h1">2,652</div>
                                             <div class="d-flex">
-                                                <div class="mr-3">13.78% <i class="fa fa-caret-down"></i></div>
-                                                <span>Last year</span>
+                                                <div class="mr-3">13.78% <i class="fa fa-caret-up"></i></div>
+                                                <span>Current Year</span>
                                             </div>
                                         </div>
                                     </div>
@@ -109,8 +109,8 @@
                                             <div>Total Patients</div>
                                             <div class="mt-3 h1">1,671</div>
                                             <div class="d-flex">
-                                                <div class="mr-3">5.78% <i class="fa fa-caret-down"></i></div>
-                                                <span>Last year</span>
+                                                <div class="mr-3">5.78% <i class="fa fa-caret-up"></i></div>
+                                                <span>Current Year</span>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row clearfix">
+            {{-- <div class="row clearfix">
                 <div class="col-12">
                     <div class="section_title">
                         <div class="mr-3">
@@ -704,7 +704,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     

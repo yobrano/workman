@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'View Group')
+@section('title', 'View Location')
 @section('content')
     @include('../partials/Loader')
 
@@ -22,8 +22,8 @@
                 <div class="block-header">
                     <div class="row clearfix">
                         <div class="col-xl-6 col-md-5 col-sm-12">
-                            <h1>Group View</h1>
-                            <span>GroupView,</span>
+                            <h1>Location  View</h1>
+                            <span>ProjectView,</span>
                         </div>
                         <div class="col-xl-6 col-md-7 col-sm-12 text-md-right">
                             <div
@@ -32,7 +32,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="{{ route('admin.groups.service') }}">Service Groups</a>
+                                        <li class="breadcrumb-item"><a href="{{ route('admin.locations.preset') }}">Locations</a>
                                         </li>
                                         <li class="breadcrumb-item active" aria-current="page">Edit</li>
                                     </ol>
@@ -48,34 +48,14 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="body">
-                                <form method="POST" action="{{route('admin.update.group.service',$project->id)}}" enctype="multipart/form-data">
+                                <form method="POST" action="{{route('admin.update.location.preset',$project->id)}}" enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Name</label>
                                         <div class="col-md-6 col-sm-10">
-                                            <input  name="group_name" type="text" class="form-control" id="inputEmail3"
-                                                placeholder="Enter Name" value="{{$project->group_name}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Detail</label>
-                                        <div class="col-md-6 col-sm-10">
-                                            <textarea name="group_description" rows="4"  class="form-control" >{{$project->group_description}}</textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Group Image</label>
-                                        <div class="col-md-6 col-sm-10">
-                                            <img src="{{asset("storage/".$project->group_image)}}"  class="w-100" alt="project-image"/>
-                                        </div>
-                                    </div>
-                                  
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Update Image</label>
-                                        <div class="col-md-6 col-sm-10">
-                                            <input type="file" class="dropify" name="group_image" accept=".png, .jpg, .jpeg">
+                                            <input  name="location_name" type="text" class="form-control" id="inputEmail3"
+                                                placeholder="Enter Name" value="{{$project->location_name}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -121,7 +101,7 @@
     <script src="{{ asset('bundles/jvectormap.bundle.js') }}"></script>
     <script src="{{ asset('vendors/toastr/toastr.js') }}"></script>
 
-    <!-- Project core js file minify with grunt -->
+    <!-- Location core js file minify with grunt -->
     <script src="{{ asset('vendors/dropify/js/dropify.min.js') }}"></script>
     <script src="{{ asset('bundles/mainscripts.bundle.js') }}"></script>
     <script src="{{ asset('bundles/forms/dropify.js') }}"></script>

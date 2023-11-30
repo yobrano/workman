@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Service Group')
+@section('title', 'Services')
 @section('content')
     @include('../partials/Loader')
 
@@ -22,8 +22,8 @@
                 <div class="block-header">
                     <div class="row clearfix">
                         <div class="col-xl-6 col-md-5 col-sm-12">
-                            <h1>Service Group</h1>
-                            <span>ServiceGroup,</span>
+                            <h1>Services</h1>
+                            <span>Services,</span>
                         </div>
                         <div class="col-xl-6 col-md-7 col-sm-12 text-md-right">
                             <div
@@ -51,8 +51,7 @@
                             <div class="body">
                                 <form>
                                     <div class="input-group">
-                                        <input type="button" class="btn btn-primary theme-bg gradient"
-                                            value="Create Service Group" data-toggle="modal" data-target="#addPrpject" />
+                                        <a type="button" class="btn btn-primary theme-bg gradient" href="{{route('admin.create.service')}}">Create Services</a>
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="search-mail"><i class="icon-plus"></i></span>
                                         </div>
@@ -65,7 +64,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Service Group</th>
+                                                <th>Name</th>
                                                 {{-- <th>Detail</th> --}}
                                                 <th> Creation Date &amp; Time</th>
                                                 <th>Action</th>
@@ -100,27 +99,120 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="defaultModalLabel">Add Group</h5>
+                    <h5 class="modal-title" id="defaultModalLabel">Add Service</h5>
                 </div>
                 <form action="{{ route('admin.store.group.service') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
-                        <div class="form-group c_form_group">
-                            <label> Title</label>
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Group Title" name="group_name">
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="body">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>First Name <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>Last Name <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <div class="form-group c_form_group">
+                                                    <label>Date of Birth <span class="text-danger">*</span></label>
+                                                    <input type="text" data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group c_form_group">
+                                                    <label>Gender <span class="text-danger">*</span></label>
+                                                    <select class="form-control show-tick">
+                                                        <option value="">- Gender -</option>
+                                                        <option value="10">Male</option>
+                                                        <option value="20">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group c_form_group">
+                                                    <label>Speciality <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group c_form_group">
+                                                    <label>Phone <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="number" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>Enter Your Email <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="email" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>Website URL <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <input type="file" class="dropify">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group mt-3">
+                                                    <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group c_form_group">
-                            <label> Group Image</label>
-                            <div class="form-line">
-                                <input type="file" name="group_image" class="form-control" placeholder="Group Image" accept=".png, .jpg, .jpeg">
-                            </div>
-                        </div>
-                        <div class="form-group c_form_group">
-                            <label>Description</label>
-                            <div class="form-line">
-                                <textarea name="group_description" rows="4" class="form-control no-resize" placeholder="Group Description..."></textarea>
+                        <div class="row clearfix">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2>Doctor's Account Information</h3>
+                                    </div>
+                                    <div class="body">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-12">
+                                                <div class="form-group c_form_group">
+                                                    <label>User Name <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>Password <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="password" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group c_form_group">
+                                                    <label>Confirm Password <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="password" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,14 +314,14 @@
             var table = $('.yajra-datatable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin.get.groups.service') }}",
+                ajax: "{{ route('admin.get.service') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'group_name',
-                        name: 'group_name'
+                        data: 'service_name',
+                        name: 'service_name'
                     },
                     // {
                     //     data: 'project_detail',

@@ -101,8 +101,8 @@
                         <form class="form-auth-small" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group c_form_group">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
+                                {{-- <label for="email"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label> --}}
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus
@@ -114,8 +114,8 @@
                                 @enderror
                             </div>
                             <div class="form-group c_form_group">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                {{-- <label for="password"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label> --}}
 
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password" required

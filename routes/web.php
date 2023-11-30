@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceGroupController;
 use App\Http\Controllers\Customer\CustomerDashboardController;
 use App\Http\Controllers\Worker\WorkerDashboardController;
@@ -53,7 +55,14 @@ Route::group(['middleware'=>'role:admin'],function () {
         Route::put('/project/category/{id}/update', [ProjectCategoryController::class,'update'])->name('admin.update.category.project');
         Route::get('/project/category/{id}/delete', [ProjectCategoryController::class,'destroy'])->name('admin.delete.category.project');
         //Services
-        Route::get('/services', [ProjectController::class,'index'])->name('admin.service');
+        Route::get('/services', [ServiceController::class,'index'])->name('admin.service');
+        Route::get('/get/services', [ServiceController::class,'getServices'])->name('admin.get.service');
+        Route::post('/service', [ServiceController::class,'store'])->name('admin.store.service');
+        Route::get('/create/service', [ServiceController::class,'create'])->name('admin.create.service');
+        Route::get('/service/{id}/edit', [ServiceController::class,'edit'])->name('admin.edit.service');
+        Route::put('/service/{id}/update', [ServiceController::class,'update'])->name('admin.update.service');
+        Route::get('/service/{id}/delete', [ServiceController::class,'destroy'])->name('admin.delete.service');
+        
         // Services Group
         Route::get('/service/groups', [ServiceGroupController::class,'index'])->name('admin.groups.service');
         Route::get('/get/service/groups', [ServiceGroupController::class,'getServiceGroup'])->name('admin.get.groups.service');
@@ -61,6 +70,14 @@ Route::group(['middleware'=>'role:admin'],function () {
         Route::get('/service/group/{id}/edit', [ServiceGroupController::class,'edit'])->name('admin.edit.group.service');
         Route::put('/service/group/{id}/update', [ServiceGroupController::class,'update'])->name('admin.update.group.service');
         Route::get('/service/group/{id}/delete', [ServiceGroupController::class,'destroy'])->name('admin.delete.group.service');
+        
+        // Presets
+        Route::get('/preset/locations', [LocationController::class,'index'])->name('admin.locations.preset');
+        Route::get('/preset/get/locations', [LocationController::class,'getLocations'])->name('admin.get.locations.preset');
+        Route::post('/preset/location', [LocationController::class,'store'])->name('admin.store.location.preset');
+        Route::get('/preset/location/{id}/edit', [LocationController::class,'edit'])->name('admin.edit.location.preset');
+        Route::put('/preset/location/{id}/update', [LocationController::class,'update'])->name('admin.update.location.preset');
+        Route::get('/preset/location/{id}/delete', [LocationController::class,'destroy'])->name('admin.delete.location.preset');
         
     });
 }); 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Service Group')
+@section('title', 'Location List')
 @section('content')
     @include('../partials/Loader')
 
@@ -22,8 +22,8 @@
                 <div class="block-header">
                     <div class="row clearfix">
                         <div class="col-xl-6 col-md-5 col-sm-12">
-                            <h1>Service Group</h1>
-                            <span>ServiceGroup,</span>
+                            <h1>Location List</h1>
+                            <span>LocationList,</span>
                         </div>
                         <div class="col-xl-6 col-md-7 col-sm-12 text-md-right">
                             <div
@@ -52,7 +52,7 @@
                                 <form>
                                     <div class="input-group">
                                         <input type="button" class="btn btn-primary theme-bg gradient"
-                                            value="Create Service Group" data-toggle="modal" data-target="#addPrpject" />
+                                            value="Create Location" data-toggle="modal" data-target="#addPrpject" />
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="search-mail"><i class="icon-plus"></i></span>
                                         </div>
@@ -65,7 +65,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Service Group</th>
+                                                <th>Location Name</th>
                                                 {{-- <th>Detail</th> --}}
                                                 <th> Creation Date &amp; Time</th>
                                                 <th>Action</th>
@@ -100,29 +100,29 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="defaultModalLabel">Add Group</h5>
+                    <h5 class="modal-title" id="defaultModalLabel">Add Location</h5>
                 </div>
-                <form action="{{ route('admin.store.group.service') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.store.location.preset') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group c_form_group">
-                            <label> Title</label>
+                            <label>Name</label>
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Group Title" name="group_name">
+                                <input type="text" class="form-control" placeholder="Location Title" name="location_name">
                             </div>
                         </div>
-                        <div class="form-group c_form_group">
-                            <label> Group Image</label>
+                        {{-- <div class="form-group c_form_group">
+                            <label> Location Image</label>
                             <div class="form-line">
-                                <input type="file" name="group_image" class="form-control" placeholder="Group Image" accept=".png, .jpg, .jpeg">
+                                <input type="file" name="project_image_path" class="form-control" placeholder="Location Image" accept=".png, .jpg, .jpeg">
                             </div>
-                        </div>
-                        <div class="form-group c_form_group">
+                        </div> --}}
+                        {{-- <div class="form-group c_form_group">
                             <label>Description</label>
                             <div class="form-line">
-                                <textarea name="group_description" rows="4" class="form-control no-resize" placeholder="Group Description..."></textarea>
+                                <textarea name="project_detail" rows="4" class="form-control no-resize" placeholder="Location Description..."></textarea>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -159,7 +159,7 @@
     <script src="{{ asset('bundles/jvectormap.bundle.js') }}"></script>
     <script src="{{ asset('vendors/toastr/toastr.js') }}"></script>
 
-    <!-- Project core js file minify with grunt -->
+    <!-- Location core js file minify with grunt -->
     <script src="{{ asset('bundles/mainscripts.bundle.js') }}"></script>
     {{-- <script src="{{ asset('js/index.js') }}"></script> --}}
 
@@ -222,14 +222,14 @@
             var table = $('.yajra-datatable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin.get.groups.service') }}",
+                ajax: "{{ route('admin.get.locations.preset') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'group_name',
-                        name: 'group_name'
+                        data: 'location_name',
+                        name: 'location_name'
                     },
                     // {
                     //     data: 'project_detail',

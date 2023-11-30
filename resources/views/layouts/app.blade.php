@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets\images\frontend\favicon.ico')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -27,7 +28,7 @@
     @yield('style')
     <!-- Scripts -->
     <link href="{{ asset('/css/bend.css') }}" rel="stylesheet">
-    <!-- <link href="/css/app.css" rel="stylesheet"> -->
+    {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet"> --}}
 </head>
 
 <body>
