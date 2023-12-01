@@ -7,8 +7,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+ 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets\images\frontend\favicon.ico')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -71,6 +72,7 @@
                                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                     </a>
+
                                     <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
         {{ __('Dashboard') }}
         </a>
@@ -103,14 +105,23 @@
                         <div class="main-banner">
                             <div class="bnr-text">
                                 <div class="banner-title">
-                                    <h5>Business</h5>
-                                    <h1 class="font-weight-medium">STARTUP</h1>
+                                    <h5>{{env('APP_NAME')}}</h5>
+
+                                    {{-- <h1 class="font-weight-medium">Home improvement,repair,inspection,<br/>cleaning,improvement,<br/>made easy</h1> --}}
                                 </div>
-                                <p class="mt-3">It is a long established fact that a reader will be distracted by the<br> readable content of a page when looking at its layout. </p>
-                                <a href="#" class="btn btn-secondary mt-3">Learn more</a>
+                                <p class="mt-3">Home improvement,repair,inspection,cleaning,improvement,made easy</p>
+                                <div class="seach-box" style="z-index: 2;position: relative;">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Search Service" aria-label="Search Service" aria-describedby="button-addon2">
+                                        <div class="input-group-append">
+                                          <button class="btn btn-info" type="button" id="button-addon2">Search</button>
+                                        </div>
+                                      </div>
+                                </div>
+                                {{-- <a href="#" class="btn btn-secondary mt-3">Learn more</a> --}}
                             </div>
                             <div class="bnr-img">
-                                <img src="assets/images/banner-img.svg" class="img-fluid">
+                                <img src="{{asset('assets\images\frontend\loaderimg.svg')}}" class="img-fluid">
                             </div>
                         </div>
                     </div>

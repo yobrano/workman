@@ -9293,7 +9293,7 @@ input:focus {
 .navbar {
   width: 100%;
   padding: 0.7rem;
-  background: #f2a654;
+  background: #f7f7f7;
 }
 @media (max-width: 991px) {
   .navbar {
